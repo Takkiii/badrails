@@ -1,0 +1,11 @@
+html
+  head
+    title Badrails
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    webpack_asset_path('application.css'), media: 'all'
+    = javascript_include_tag webpack_asset_path('application.js')
+
+  body
+    .container
+      = yield
