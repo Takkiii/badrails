@@ -1,5 +1,12 @@
 h1 Listing posts
 
+= search_form_for @q do |f|
+  / Search if the name field contains...
+  .form-group
+    = f.label "投稿を検索"
+    = f.search_field :text_cont, class: "form-control"
+  = f.submit "検索", class: "btn btn-default"
+
 .table-responsive
   table.table.table-striped
     thead
@@ -22,3 +29,4 @@ br
 
 - if user_signed_in?
   = link_to 'New Post', new_post_path, class: "btn btn-default"
+
